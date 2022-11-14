@@ -1,0 +1,36 @@
+<template name="pager">
+    <ul class="pagination pagination m-0 float-right" data-records="{{recordCount}}">
+        <li class="page-item">
+            <a class="page-link to-begin" href="#" {{eq page.get 0 'disabled'}}>
+                <i class="fas fa-angle-double-left"></i>
+            </a>
+        </li>
+        <li class="page-item">
+            <a class="page-link back" href="#" {{eq page.get 0 'disabled'}}>
+                <i class="fas fa-angle-left"></i>
+            </a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" data-toggle="dropdown" href="#">
+                {{plusOne page.get}} / {{pageCount}}
+            </a>
+            <div class="dropdown-menu dropdown-menu-right p-0">
+                {{#each currentLimit in limits}}
+                    <a href="#" class="dropdown-item limit-dropdown {{selectedLimitClass currentLimit}}" data-target="{{currentLimit}}">
+                        {{currentLimit}}
+                    </a>
+                {{/each}}
+            </div>
+        </li>
+        <li class="page-item">
+            <a class="page-link forward" href="#" {{gte (plusOne page.get) pageCount 'disabled'}}>
+                <i class="fas fa-angle-right"></i>
+            </a>
+        </li>
+        <li class="page-item">
+            <a class="page-link to-end" href="#" {{gte (plusOne page.get) pageCount 'disabled'}}>
+                <i class="fas fa-angle-double-right"></i>
+            </a>
+        </li>
+    </ul>
+</template>

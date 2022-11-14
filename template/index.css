@@ -1,0 +1,4 @@
+
+ul.pagination .page-link[disabled] {
+    cursor: not-allowed;
+}
