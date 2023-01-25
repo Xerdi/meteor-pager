@@ -42,3 +42,4 @@ Template.myPage.helpers({
 ```
 The `records` helper reuses the `page` and `limit` to get the actual paged results.
 
+Optionally you can pass a custom array of `limits` to the `pager`.

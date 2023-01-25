@@ -13,7 +13,8 @@ Template.pager.onCreated(function () {
 
 Template.pager.helpers({
     limits() {
-        return [15, 30, 50, 100];
+        const {limits} = Template.instance().data;
+        return limits || [15, 30, 50, 100];
     },
     pageCount() {
         const {limit, recordCount} = Template.instance().data;
